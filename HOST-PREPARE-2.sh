@@ -7,3 +7,7 @@
 sudo echo 'User = "root"' >> /etc/libvirt/qemu.conf
 sudo echo 'group = "root"' >> /etc/libvirt/qemu.conf
 sudo systemctl restart libvirtd
+
+sudo mkdir /etc/qemu/
+sudo touch /etc/qemu/bridge.conf
+sudo echo "allow br0" >> /etc/qemu/bridge.conf

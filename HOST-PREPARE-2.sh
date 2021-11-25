@@ -16,3 +16,6 @@ echo "allow all" | sudo tee /etc/qemu/libvirt-qemu.conf
 echo "include /etc/qemu/libvirt-qemu.conf" | sudo tee --append /etc/qemu/bridge.conf
 sudo chown root:libvirt-qemu /etc/qemu/libvirt-qemu.conf
 sudo chmod 640 /etc/qemu/libvirt-qemu.conf
+
+# test
+chmod u+s /usr/lib/qemu/qemu-bridge-helper

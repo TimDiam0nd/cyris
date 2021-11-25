@@ -11,3 +11,8 @@ sudo systemctl restart libvirtd
 sudo mkdir /etc/qemu/
 sudo touch /etc/qemu/bridge.conf
 sudo echo "allow br0" >> /etc/qemu/bridge.conf
+
+echo "allow all" | sudo tee /etc/qemu/libvirt-qemu.conf
+echo "include /etc/qemu/libvirt-qemu.conf" | sudo tee --append /etc/qemu/bridge.conf
+sudo chown root:libvirt-qemu /etc/qemu/libvirt-qemu.conf
+sudo chmod 640 /etc/qemu/libvirt-qemu.conf
